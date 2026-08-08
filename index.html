@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -23,6 +23,36 @@
         <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
       </header>
 
+      <!-- Beauty Gallery -->
+      <section class="beauty-gallery" aria-label="Beauty categories">
+        <article class="beauty-card">
+          <img
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 160'><rect width='240' height='160' rx='24' fill='%23f7efe7'/><circle cx='72' cy='66' r='28' fill='%23b58d66'/><rect x='58' y='82' width='28' height='58' rx='14' fill='%237d5d41'/><rect x='112' y='42' width='92' height='20' rx='10' fill='%23dcc0a6'/><rect x='142' y='48' width='58' height='8' rx='4' fill='%23fffaf5'/><circle cx='172' cy='114' r='16' fill='%23ff003b'/></svg>"
+            alt="Makeup brush illustration"
+          />
+          <h3>Makeup</h3>
+          <p>Brushes, color, and finishing touches.</p>
+        </article>
+
+        <article class="beauty-card">
+          <img
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 160'><rect width='240' height='160' rx='24' fill='%23fff7e7'/><rect x='66' y='32' width='52' height='92' rx='18' fill='%23e3a535'/><rect x='76' y='20' width='32' height='20' rx='8' fill='%23ff003b'/><circle cx='158' cy='62' r='28' fill='%23eddcc9'/><circle cx='158' cy='62' r='16' fill='%23b58d66'/><rect x='136' y='92' width='46' height='22' rx='11' fill='%237d5d41'/></svg>"
+            alt="Skincare bottle illustration"
+          />
+          <h3>Skincare</h3>
+          <p>Cleanser, moisturizer, and treatment essentials.</p>
+        </article>
+
+        <article class="beauty-card">
+          <img
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 160'><rect width='240' height='160' rx='24' fill='%23fef5ec'/><rect x='52' y='44' width='70' height='18' rx='9' fill='%23b58d66'/><rect x='62' y='62' width='50' height='68' rx='18' fill='%237d5d41'/><path d='M142 48c28 0 50 20 50 44s-22 44-50 44-50-20-50-44 22-44 50-44z' fill='%23dcc0a6'/><path d='M142 62c16 0 28 14 28 30s-12 30-28 30-28-14-28-30 12-30 28-30z' fill='%23fffaf5'/></svg>"
+            alt="Hair brush and haircare illustration"
+          />
+          <h3>Haircare</h3>
+          <p>Brushes, styling, and healthy hair support.</p>
+        </article>
+      </section>
+
       <!-- Category Filter -->
       <div class="search-section">
         <select id="categoryFilter">
@@ -44,17 +74,32 @@
 
       <!-- Selected Products -->
       <div class="selected-products">
-        <h2>Selected Products</h2>
+        <h2>
+          Selected Products
+          <span id="selectedProductsCount" class="selected-products-count"
+            >0 selected</span
+          >
+        </h2>
         <div id="selectedProductsList"></div>
-        <button id="generateRoutine" class="generate-btn">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Routine
-        </button>
+        <div class="selected-products-actions">
+          <button id="clearSelections" class="clear-btn" type="button">
+            Clear All
+          </button>
+          <button id="generateRoutine" class="generate-btn" disabled>
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Routine
+          </button>
+        </div>
       </div>
 
       <!------- Chat Area ------->
       <section class="chatbox">
         <h2>Let's Build Your Routine</h2>
-        <div id="chatWindow" class="chat-window"></div>
+        <div
+          id="chatWindow"
+          class="chat-window"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
 
         <form id="chatForm" class="chat-form">
           <label for="userInput" class="visually-hidden">Message</label>
