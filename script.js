@@ -9,8 +9,8 @@ const chatForm = document.getElementById("chatForm");
 const chatWindow = document.getElementById("chatWindow");
 const userInput = document.getElementById("userInput");
 
-/* The class-hosted Cloudflare Worker handles the OpenAI request */
-const workerUrl = "https://loreal-routine.your-subdomain.workers.dev/";
+/* The class-hosted Cloudflare Workevr handles the OpenAI request */
+const workerUrl = "https://loreal2ndpro.smetha1.workers.dev/";
 
 /* Save the selected products between page reloads */
 const selectedProductsStorageKey = "loreal-selected-products";
